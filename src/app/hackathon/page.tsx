@@ -1,17 +1,18 @@
 "use client";
 
-import { HackathonLanding } from "@/components/hackathon/HackathonLanding";
-import { HackathonAbout }   from "@/components/hackathon/HackathonAbout";
-import Timeline             from "@/components/Timeline";
-import HowToApply           from "@/components/HowToApply";
-import ProblemStatements    from "@/components/ProblemStatements";
+import { HackathonLanding } from "../../components/hackathon/HackathonLanding";
+import { HackathonAbout } from "../../components/hackathon/HackathonAbout";
+import ProblemStatements from "../../components/ProblemStatements";
+import { AnimatedBackground } from "../../components/AnimatedBackground";
 
 export default function HackathonPage() {
   return (
     <div className="relative w-full">
+      <AnimatedBackground />
+
       <div className="flex flex-col w-full">
 
-        <section className="min-h-screen flex items-center justify-center p-4">
+        <section className="min-h-screen flex items-center justify-center px-4 pt-24 pb-10 sm:pb-14">
           <div className="w-full max-w-6xl">
             <HackathonLanding />
           </div>
@@ -26,18 +27,6 @@ export default function HackathonPage() {
         <section className="min-h-screen flex items-center justify-center p-4">
           <div className="w-full max-w-6xl">
             <ProblemStatements />
-          </div>
-        </section>
-
-        <section className="flex items-center justify-center p-4">
-          <div className="w-full max-w-6xl">
-            <Timeline />
-          </div>
-        </section>
-
-        <section className="flex items-center justify-center p-4">
-          <div className="w-full max-w-6xl">
-            <HowToApply />
           </div>
         </section>
 
