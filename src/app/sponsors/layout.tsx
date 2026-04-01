@@ -1,5 +1,4 @@
-import { FloatingSidebars } from "@/components/FloatingSidebars";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { AnimatedBackground } from "../../components/AnimatedBackground";
 
 export default function SponsorsLayout({
   children,
@@ -9,7 +8,6 @@ export default function SponsorsLayout({
   return (
     <>
       <AnimatedBackground />
-      <FloatingSidebars />
       {children}
     </>
   );
