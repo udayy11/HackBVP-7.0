@@ -2,7 +2,7 @@
 
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { Sponsors } from "@/components/Sponsors";
+import { Sponsors } from "../../components/Sponsors";
 
 export default function SponsorsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
