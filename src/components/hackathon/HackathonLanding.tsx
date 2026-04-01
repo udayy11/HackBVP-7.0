@@ -12,7 +12,6 @@ export function HackathonLanding() {
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
 
-          {/* TODO: Replace with your org/event presenter line */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,9 +46,8 @@ export function HackathonLanding() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
           >
-            {/* TODO: Update href to your registration link */}
             <a
-              href="#register"
+              href="https://unstop.com/o/KH6O231?lb=nxBNmQKY&utm_medium=Share&utm_source=hackbvpe37162&utm_campaign=Online_coding_challenge" target="_blank" rel="noopener noreferrer"
               className="px-6 sm:px-8 py-3 sm:py-4 text-white font-semibold rounded-full shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base hover:opacity-90"
               style={{ background: "var(--primary)", boxShadow: "0 0 24px rgba(207,42,68,0.35)" }}
             >
