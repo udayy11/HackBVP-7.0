@@ -73,7 +73,7 @@ export function Hero() {
                 <span className="hidden sm:inline" style={{ color: "var(--border)" }}>
                   |
                 </span>
-                <span>📍 BVCOE / Online</span>
+                <span>📍 Online / BVCOE</span>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
                 <Link
