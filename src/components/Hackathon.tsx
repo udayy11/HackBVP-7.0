@@ -6,29 +6,33 @@ import { Space_Grotesk } from "next/font/google";
 const spaceGrotesk = Space_Grotesk({ weight: ["400", "600"], subsets: ["latin"] });
 
 export function Hackathon() {
+
+
   const features = [
     {
       // TODO: Replace title and description with your own hackathon highlight
       title: "Challenges",
-      description: "Describe the kind of problems participants will tackle. What domains, what difficulty level, what real-world impact?",
+      description: "Tackle real-world problems in environmental technology, sustainable development, and green energy. Bring your A-game and code a solution that makes a difference.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />,
     },
     {
       // TODO: Replace title and description
-      title: "Duration",
-      description: "How long is the hackathon? What does the schedule look like? Mention mentorship, workshops, or any other support available.",
+      title: "24 Hours of Hacking",
+      description: "From ideation to implementation, you'll have 24 hours to turn your ideas into reality with mentorship from industry experts.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
     },
     {
       // TODO: Replace title and description
       title: "Prizes",
-      description: "What do winners get? Cash prizes, mentorship, internship opportunities, certificates? Make it compelling.",
+      description: "Win exciting prizes, internships, and mentorship opportunities with top companies. Your innovation could be the next big thing!",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
     },
   ];
 
   return (
     <section id="hackathon" className="relative py-16 overflow-hidden">
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-10 animate-float pointer-events-none" style={{ background: "var(--primary)" }} />
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-10 animate-float pointer-events-none" style={{ background: "var(--secondary)", animationDelay: "4s" }} />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative p-8 lg:p-12">
 
@@ -50,9 +54,7 @@ export function Hackathon() {
               className="w-full h-48 rounded-3xl flex items-center justify-center border"
               style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}
             >
-              <p className="text-sm" style={{ color: "rgba(232,232,240,0.3)" }}>
-                TODO: Replace with your hackathon banner image
-              </p>
+              <img src="/banner.jpeg" alt="hackathon banner" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
@@ -70,7 +72,7 @@ export function Hackathon() {
               >
                 <div
                   className="w-12 h-12 mb-4 rounded-full flex items-center justify-center"
-                  style={{ background: "rgba(108,127,255,0.1)" }}
+                  style={{ background: "rgba(207,42,68,0.12)" }}
                 >
                   <svg className="w-6 h-6" style={{ color: "var(--primary)" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {feature.icon}

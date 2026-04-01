@@ -20,10 +20,10 @@ export function EventCard({ title, description, imageUrl, redirectUrl, collabora
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="group relative bg-[#111827] rounded-xl overflow-hidden transition-all duration-300"
-      style={{ boxShadow: "inset 0 0 40px rgba(56, 189, 248, 0.2)" }}
+      className="group relative bg-[#161B24] rounded-xl overflow-hidden transition-all duration-300"
+      style={{ boxShadow: "inset 0 0 40px rgba(207, 42, 68, 0.15)" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#36D399]/10 to-[#38BDF8]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#CF2A44]/10 to-[#1E8C7A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
       <div className="relative h-48 overflow-hidden">
         {/* TODO: Replace placeholder with actual event images */}
         <Image alt={title} src={eventImage} fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -33,13 +33,13 @@ export function EventCard({ title, description, imageUrl, redirectUrl, collabora
         </div>
       </div>
       <div className="relative z-20 p-6 pt-4">
-        <p className="text-[#D1D5DB] text-sm leading-relaxed mb-4 line-clamp-3">{description}</p>
+        <p className="text-[#DAD9D5] text-sm leading-relaxed mb-4 line-clamp-3">{description}</p>
         {collaboratingSocieties.length > 0 && (
           <div className="mb-4">
-            <p className="text-xs text-[#9CA3AF] mb-2">Collaborating Societies:</p>
+            <p className="text-xs text-[#5A6070] mb-2">Collaborating Societies:</p>
             <div className="flex flex-wrap gap-2">
               {collaboratingSocieties.map((society, index) => (
-                <span key={index} className="px-3 py-1 text-xs font-medium rounded-full bg-[#1F2937] text-[#E5E7EB] border border-[#374151]">
+                <span key={index} className="px-3 py-1 text-xs font-medium rounded-full bg-[#0F1217] text-[#DAD9D5] border border-[#CF2A44/20]">
                   {society}
                 </span>
               ))}
@@ -50,7 +50,7 @@ export function EventCard({ title, description, imageUrl, redirectUrl, collabora
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => { if (redirectUrl && redirectUrl !== "#") window.open(redirectUrl, "_blank"); }}
-          className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30"
+          className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#CF2A44] to-[#AF263C] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#CF2A44]/30"
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
             <span>Register Now</span>
@@ -96,10 +96,10 @@ export function EventCardGrid() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           {/* TODO: Replace heading and subtext */}
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#36D399] to-[#38BDF8] bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A] bg-clip-text text-transparent">
             Upcoming Events
           </h2>
-          <p className="text-lg text-[#E5E7EB] max-w-2xl mx-auto">
+          <p className="text-lg text-[#DAD9D5] max-w-2xl mx-auto">
             Discover exciting events and opportunities at YOUR EVENT NAME
           </p>
         </div>

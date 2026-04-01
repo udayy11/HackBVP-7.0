@@ -41,11 +41,11 @@ const HowToApply = () => {
           className="text-center"
         >
           {/* TODO: Replace heading if needed */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#36D399] to-[#38BDF8] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A] bg-clip-text text-transparent">
             How to Apply
           </h2>
           {/* TODO: Replace subtext */}
-          <p className="text-lg text-[#b9b9b9] max-w-2xl mx-auto">
+          <p className="text-lg text-[#5A6070] max-w-2xl mx-auto">
             Follow these simple steps to register and participate in the event.
           </p>
         </motion.div>
@@ -60,16 +60,16 @@ const HowToApply = () => {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className="relative bg-[#111827] border border-[#1F2937] rounded-2xl p-4 text-center transition-all duration-300 hover:border-[#36D399]/50 hover:shadow-lg hover:shadow-[#36D399]/10 hover:-translate-y-2">
+              <div className="relative bg-[#161B24] border border-[#CF2A44/20] rounded-2xl p-4 text-center transition-all duration-300 hover:border-[#CF2A44]/50 hover:shadow-lg hover:shadow-[#CF2A44]/10 hover:-translate-y-2">
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-[#36D399] to-[#38BDF8] rounded-full flex items-center justify-center text-black font-bold text-xl shadow-lg">
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A] rounded-full flex items-center justify-center text-black font-bold text-xl shadow-lg">
                     {step.number}
                   </div>
                 </div>
                 <div className="text-4xl mb-4">{step.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#36D399] transition-colors">{step.title}</h3>
-                <p className="text-[#E5E7EB] leading-relaxed">{step.description}</p>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#36D399]/5 to-[#38BDF8]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#1E8C7A] transition-colors">{step.title}</h3>
+                <p className="text-[#DAD9D5] leading-relaxed">{step.description}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#CF2A44]/5 to-[#1E8C7A]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}

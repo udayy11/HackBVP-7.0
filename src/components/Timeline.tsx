@@ -14,9 +14,9 @@ interface TimelineEvent {
 
 // ─── STATUS CONFIG ────────────────────────────────────────────────────────────
 const statusConfig: Record<TimelineStatus, { dot: string; label: string }> = {
-  completed: { dot: "bg-gray-500",   label: "Done"     },
-  live:      { dot: "bg-green-400 animate-pulse", label: "Live" },
-  upcoming:  { dot: "",              label: "Upcoming" }, // uses CSS var
+  completed: { dot: "bg-gray-500", label: "Done" },
+  live: { dot: "bg-green-400 animate-pulse", label: "Live" },
+  upcoming: { dot: "", label: "Upcoming" }, // uses CSS var
 };
 
 // ─── SINGLE EVENT CARD ────────────────────────────────────────────────────────
@@ -34,9 +34,8 @@ function TimelineCard({ event, index, isLast }: { event: TimelineEvent; index: n
       {/* Left: dot + vertical line */}
       <div className="flex flex-col items-center">
         <div
-          className={`w-4 h-4 rounded-full mt-1 flex-shrink-0 border-2 border-[#0a0a0f] ${
-            event.status === "upcoming" ? "" : cfg.dot
-          }`}
+          className={`w-4 h-4 rounded-full mt-1 flex-shrink-0 border-2 border-[#0F1217] ${event.status === "upcoming" ? "" : cfg.dot
+            }`}
           style={event.status === "upcoming" ? { background: "var(--primary)", boxShadow: "0 0 8px var(--primary)" } : {}}
         />
         {!isLast && <div className="w-px flex-1 mt-2" style={{ background: "var(--border)" }} />}
@@ -62,12 +61,11 @@ function TimelineCard({ event, index, isLast }: { event: TimelineEvent; index: n
             <span className="text-xs px-2.5 py-1 rounded-full border font-medium" style={{ borderColor: "var(--border)", color: "rgba(232,232,240,0.5)" }}>
               {event.time}
             </span>
-            <span className={`text-xs px-2.5 py-1 rounded-full font-semibold flex items-center gap-1.5 ${
-              event.status === "live"      ? "bg-green-500/15 text-green-400"  :
-              event.status === "completed" ? "bg-gray-500/15 text-gray-400"   :
-                                            "text-white/60"
-            }`}
-              style={event.status === "upcoming" ? { background: "rgba(108,127,255,0.12)", color: "var(--accent)" } : {}}
+            <span className={`text-xs px-2.5 py-1 rounded-full font-semibold flex items-center gap-1.5 ${event.status === "live" ? "bg-green-500/15 text-green-400" :
+              event.status === "completed" ? "bg-gray-500/15 text-gray-400" :
+                "text-white/60"
+              }`}
+              style={event.status === "upcoming" ? { background: "rgba(207,42,68,0.12)", color: "var(--accent)" } : {}}
             >
               {event.status === "live" && <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />}
               {cfg.label}
@@ -137,81 +135,159 @@ const Timeline = () => {
 
   const schedule: { day: string; events: TimelineEvent[] }[] = [
     {
-      day: "Day 1 — DD Month YYYY",   // TODO: Replace with actual date
+      day: "Pre-Event",
+      events: [
+        {
+          day: "From 1st April 2026",
+          time: "11:30 PM",
+          title: "Registration Opens",
+          description: "Participants can register and form teams on the HackerRank portal.",
+          status: "live",
+          location: " HackerRank Portal",  // TODO: update or remove
+        },
+        {
+          day: "Till 6th April 2026",
+          time: "11:30 PM",
+          title: "Abstract Submission",
+          description: "Teams submit a 1-page abstract outlining their proposed solution.",
+          status: "upcoming",
+          location: " HackerRank Portal",  // TODO: update or remove
+        }
+      ]// Use "Pre-Event" for activities before the main event days
+    },
+    {
+      day: "Day 1 — 09 April 2026",
       events: [
         {
           day: "Day 1",
-          time: "09:00 AM",
-          title: "Opening Ceremony",
-          description: "Describe what happens at the opening — welcome address, keynote, rules briefing, etc.",
+          time: "08:00 AM - 11:00 AM",
+          title: "Round 2: Project Development",
+          description: "Teams work on building their projects for Round 2.",
           status: "upcoming",
-          location: "Main Auditorium",  // TODO: update or remove
         },
         {
           day: "Day 1",
-          time: "11:00 AM",
-          title: "Hackathon / Event Begins",
-          description: "Teams start working on their problem statements. Mentors available from this point.",
+          time: "11:00 AM - 12:30 PM",
+          title: "Mentorship Round 1",
+          description: "Participants receive guidance and feedback from mentors.",
           status: "upcoming",
-          location: "Lab Block A",
+          location: "Discord Channels",  // TODO: update if mentorship happens in-person or on a different platform
         },
         {
           day: "Day 1",
-          time: "01:00 PM",
+          time: "12:30 PM - 01:30 PM",
           title: "Lunch Break",
-          description: "Catered lunch for all participants.",
+          description: "Participants may take a break and have lunch.",
           status: "upcoming",
-          location: "Cafeteria",
         },
         {
           day: "Day 1",
-          time: "03:00 PM",
-          title: "Workshop / Guest Talk",
-          description: "A session by an industry expert or a hands-on workshop. Topic TBD.",
+          time: "03:00 PM - 04:00 PM",
+          title: "Fun Games & Activities",
+          description: "Interactive games and activities to refresh participants.",
           status: "upcoming",
-          location: "Seminar Hall",
+          location: "Discord Server",  // TODO: update if activities happen in-person or on a different platform
         },
         {
           day: "Day 1",
-          time: "07:00 PM",
-          title: "Mid-point Check-in",
-          description: "Teams present a quick progress update to the judging panel.",
+          time: "05:00 PM",
+          title: "Judging Round (Round 2)",
+          description: "Evaluation by multiple panels. Top 40 teams will be selected.",
+          status: "upcoming",
+          location: "Discord Channels",  // TODO: update if judging happens in-person or on a different platform
+        },
+        {
+          day: "Day 1",
+          time: "08:00 PM",
+          title: "Day 1 Wrap-up & Results",
+          description: "End of Day 1 with announcement of shortlisted teams.",
           status: "upcoming",
         },
       ],
     },
     {
-      day: "Day 2 — DD Month YYYY",   // TODO: Replace with actual date
+      day: "Day 2 — 15 April 2026",
       events: [
         {
           day: "Day 2",
           time: "08:00 AM",
-          title: "Morning Check-in",
-          description: "Resume work. Breakfast served. Mentors available for final guidance.",
+          title: "Team Arrival",
+          description: "Teams arrive at the venue and prepare for the next rounds.",
           status: "upcoming",
         },
         {
           day: "Day 2",
-          time: "11:00 AM",
-          title: "Submission Deadline",
-          description: "All projects must be submitted by this time. No late entries accepted.",
+          time: "08:30 AM",
+          title: "Reporting & Check-in",
+          description: "Participant verification and check-in process.",
           status: "upcoming",
         },
         {
           day: "Day 2",
-          time: "12:00 PM",
-          title: "Final Presentations",
-          description: "Teams present their solutions to the judging panel. Each team gets X minutes.",
+          time: "09:00 AM",
+          title: "Inauguration Ceremony",
+          description: "Official opening ceremony with welcome address and briefing.",
           status: "upcoming",
-          location: "Main Auditorium",
+          location: "BVIMR Auditorium",
+        },
+        {
+          day: "Day 2",
+          time: "10:30 AM",
+          title: "Round 3 Begins",
+          description: "Selected teams proceed to Round 3 and continue development.",
+          status: "upcoming",
+          location: "Library F Block",
+        },
+        {
+          day: "Day 2",
+          time: "01:00 PM - 02:00 PM",
+          title: "Mentorship Round 2 + Judging",
+          description: "Mentors provide final guidance alongside evaluation.",
+          status: "upcoming",
+          location: "Library F Block",  // TODO: update if mentorship happens in-person or on a different platform
+        },
+        {
+          day: "Day 2",
+          time: "02:00 PM - 03:00 PM",
+          title: "Lunch Break",
+          description: "Lunch for all participants. Lunch will be provided at the venue.",
+          status: "upcoming",
         },
         {
           day: "Day 2",
           time: "03:00 PM",
-          title: "Results & Prize Distribution",
-          description: "Winners announced. Prize distribution ceremony and closing remarks.",
+          title: "Round 3 Results",
+          description: "Top 10 teams announced for the final round.",
           status: "upcoming",
-          location: "Main Auditorium",
+        },
+        {
+          day: "Day 2",
+          time: "03:00 PM - 04:00 PM",
+          title: "Games & Activities",
+          description: "Engaging activities for participants.",
+          status: "upcoming",
+        },
+        {
+          day: "Day 2",
+          time: "05:30 PM - 06:00 PM",
+          title: "Evening Snacks",
+          description: "Refreshments served to all participants.",
+          status: "upcoming",
+        },
+        {
+          day: "Day 2",
+          time: "06:00 PM",
+          title: "Final Judging (Round 4)",
+          description: "Top 10 teams present their final solutions to the judges.",
+          status: "upcoming",
+          location: "Seminar Hall",
+        },
+        {
+          day: "Day 2",
+          time: "07:30 PM",
+          title: "Final Results & Closing Ceremony",
+          description: "Winners announced followed by closing remarks.",
+          status: "upcoming",
         },
       ],
     },
@@ -231,13 +307,9 @@ const Timeline = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            {/* TODO: Replace heading if needed */}
-            Schedule
+            Timeline
           </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(232,232,240,0.5)" }}>
-            {/* TODO: Replace subtext */}
-            The full schedule for YOUR EVENT NAME. All times are in IST.
-          </p>
+
 
           {/* Legend */}
           <div className="flex items-center justify-center gap-6 mt-6 text-xs font-medium" style={{ color: "rgba(232,232,240,0.5)" }}>

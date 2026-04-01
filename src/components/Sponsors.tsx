@@ -15,7 +15,7 @@ export function Sponsors() {
       sponsors: [
         {
           name: "Title Sponsor Name",        // TODO: Sponsor name
-          logo: "/sponsors/sponsor-1.png",   // TODO: Add logo to /public/sponsors/
+          logo: "/logo.png",   // TODO: Add logo to /public/sponsors/
           width: 300,
           height: 100,
         },
@@ -25,8 +25,8 @@ export function Sponsors() {
       // TODO: Rename tier and add your co-sponsors
       title: "Co-Sponsors",
       sponsors: [
-        { name: "Co-Sponsor 1", logo: "/sponsors/sponsor-2.png", width: 200, height: 80 },
-        { name: "Co-Sponsor 2", logo: "/sponsors/sponsor-3.png", width: 200, height: 80 },
+        { name: "Co-Sponsor 1", logo: "/logo.png", width: 200, height: 80 },
+        { name: "Co-Sponsor 2", logo: "/logo.png", width: 200, height: 80 },
         // TODO: Add more co-sponsors here as needed
       ],
     },
@@ -34,8 +34,8 @@ export function Sponsors() {
       // TODO: Rename or remove this tier as needed
       title: "Community Partners",
       sponsors: [
-        { name: "Partner 1", logo: "/sponsors/partner-1.png", width: 150, height: 70 },
-        { name: "Partner 2", logo: "/sponsors/partner-2.png", width: 150, height: 70 },
+        { name: "Partner 1", logo: "/logo.png", width: 150, height: 70 },
+        { name: "Partner 2", logo: "/logo.png", width: 150, height: 70 },
         // TODO: Add more partners here
       ],
     },
@@ -50,7 +50,7 @@ export function Sponsors() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-[#CF2A44] via-[#AF263C] to-[#1E8C7A] leading-tight">
           {/* TODO: Replace heading if needed */}
           Our Sponsors & Partners
         </h2>

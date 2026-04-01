@@ -15,11 +15,10 @@ export function HackathonAbout() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          {/* TODO: Replace with your hackathon/event name */}
-          <h2 className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-6 ${spaceGrotesk.className}`}>
-            About YOUR HACKATHON
+          <h2 className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A] mb-6 ${spaceGrotesk.className}`}>
+            About HackBVP 7.0
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6" />
+          <div className="w-24 h-1 bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A] mx-auto mb-6" />
         </motion.div>
 
         <motion.div
@@ -31,26 +30,24 @@ export function HackathonAbout() {
         >
           <div className="space-y-8">
             <div className="text-center">
-              {/* TODO: Replace with your about section headline */}
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-100 mb-6">
-                Your About Section Headline
+              <h3 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+                Flagship Event of BVCOE CSE Department
               </h3>
             </div>
 
-            <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50">
-              {/* TODO: Replace with your hackathon/event description paragraph */}
-              <p className="text-slate-300 text-sm sm:text-lg leading-relaxed mb-8">
-                Write a 3–5 sentence description of your hackathon or event here.
-                Explain what it is, who it&apos;s for, what participants will do, and
-                why it matters. This is your pitch — make it compelling.
+            <div className="backdrop-blur-sm p-8 rounded-2xl border" style={{ background: "var(--card-bg)", borderColor: "var(--border)" }}>
+                <p className="text-sm sm:text-lg leading-relaxed mb-8" style={{ color: "rgba(218,217,213,0.7)" }}>
+                HackBVP@7.0 is an intensive two-phase innovation hackathon that brings together bright student minds to ideate, prototype, and build impactful tech solutions in a high-energy, mentor-driven environment. Whether you're passionate about AI, full-stack development, cybersecurity, or have a bold idea, this is your stage.
               </p>
+              <p className="text-sm sm:text-lg leading-relaxed mb-8" style={{ color: "rgba(218,217,213,0.7)" }}>
+                it begins with an online qualifier where teams showcase creativity and problem-solving skills, followed by an offline finale at Bharati Vidyapeeth College of Engineering, where finalists build and pitch their solutions to industry experts. With multiple tracks, mentorship, and exciting rewards, HackBVP@7.0 is a launchpad for future innovators.
+                </p>
 
-              {/* TODO: Update all stat numbers to reflect your event */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <StatCard number="XX"   label="Hours" />
+                <StatCard number="24" label="Hours" />
                 <StatCard number="XXX+" label="Registrations" />
-                <StatCard number="XX+"  label="Problems" />
-                <StatCard number="X"    label="Tracks" />
+                <StatCard number="20+" label="Problems" />
+                <StatCard number="6" label="Tracks" />
               </div>
             </div>
           </div>
@@ -62,9 +59,22 @@ export function HackathonAbout() {
 
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
-    <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-sm p-6 rounded-xl border border-slate-700/50 text-center hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
-      <div className="text-2xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">{number}</div>
-      <div className="text-slate-300 text-xs sm:text-sm font-medium mt-1 sm:mt-2">{label}</div>
+    <div
+      className="backdrop-blur-sm p-6 rounded-xl border text-center transition-all duration-300 hover:shadow-lg"
+      style={{
+        background: "var(--card-bg)",
+        borderColor: "var(--border)",
+        boxShadow: undefined,
+      }}
+      onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 8px 24px rgba(207,42,68,0.12)")}
+      onMouseLeave={e => (e.currentTarget.style.boxShadow = "")}
+    >
+      <div className="text-2xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#CF2A44] to-[#1E8C7A]">
+        {number}
+      </div>
+      <div className="text-xs sm:text-sm font-medium mt-1 sm:mt-2" style={{ color: "rgba(218,217,213,0.6)" }}>
+        {label}
+      </div>
     </div>
   );
 }

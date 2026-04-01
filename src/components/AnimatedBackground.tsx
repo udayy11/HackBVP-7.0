@@ -15,10 +15,10 @@ export function AnimatedBackground() {
         className="absolute inset-0"
         animate={{
           background: [
-            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(108,127,255,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(167,139,250,0.07) 0%, transparent 60%), #0a0a0f",
-            "radial-gradient(ellipse 70% 90% at 30% 70%, rgba(167,139,250,0.08) 0%, transparent 60%), radial-gradient(ellipse 90% 60% at 70% 20%, rgba(108,127,255,0.07) 0%, transparent 60%), #0a0a0f",
-            "radial-gradient(ellipse 90% 70% at 10% 50%, rgba(108,127,255,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 100% at 90% 60%, rgba(167,139,250,0.08) 0%, transparent 60%), #0a0a0f",
-            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(108,127,255,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(167,139,250,0.07) 0%, transparent 60%), #0a0a0f",
+            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(207,42,68,0.10) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(30,140,122,0.07) 0%, transparent 60%), #0F1217",
+            "radial-gradient(ellipse 70% 90% at 30% 70%, rgba(30,140,122,0.09) 0%, transparent 60%), radial-gradient(ellipse 90% 60% at 70% 20%, rgba(207,42,68,0.08) 0%, transparent 60%), #0F1217",
+            "radial-gradient(ellipse 90% 70% at 10% 50%, rgba(207,42,68,0.08) 0%, transparent 60%), radial-gradient(ellipse 70% 100% at 90% 60%, rgba(30,140,122,0.09) 0%, transparent 60%), #0F1217",
+            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(207,42,68,0.10) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(30,140,122,0.07) 0%, transparent 60%), #0F1217",
           ],
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
